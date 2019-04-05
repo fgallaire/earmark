@@ -38,10 +38,14 @@ defmodule Earmark.HtmlRenderer do
   # Html #
   ########
   defp render_block(%Block.Html{html: html}, context) do
+    IO.puts "BLOCK:"
+    IO.inspect html
     {context, Enum.intersperse(html, ?\n)}
   end
 
   defp render_block(%Block.HtmlOther{html: html}, context) do
+    IO.puts "OTHER:"
+    IO.inspect html
     {context, Enum.intersperse(html, ?\n)}
   end
 
